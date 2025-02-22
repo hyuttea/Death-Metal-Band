@@ -4,71 +4,8 @@
 <meta charset="utf-8">
 
 <body>
-  <div class="header">
-    <img src="Death.png" style="width: 110px;">
-    <!-- Barra de navegação dentro do cabeçalho -->
-    <div class="topnav">
-      <a href="Index.html" >HOME</a>
-      <a href="Sobre.html">SOBRE</a>
-      <a href="Albums.html">ALBUMS</a>
-    
-    </div>
-  </div>
-
-  <div class="gallery">
-    <a target="_blank" href="https://www.youtube.com/watch?v=I-BqU3nkmto&list=OLAK5uy_nFu-fDDLNUibJxJpXXTmattVPfuGrJfJ0" >
-      <img src="ScreamBloodyGore.jpg" alt="ScreamBloodyGore" width="600" height="400">
-    </a>
-    <div class="desc" style="color: #d6111a;">Scream Bloody Gore 1987</div>
-  </div>
-  
-  <div class="gallery">
-    <a target="_blank" href="https://www.youtube.com/watch?v=uiSTpOBC9ac&list=OLAK5uy_nq7b_iWMbEz8Ga7kFVkcpMnjNGdlTYMXU">
-      <img src="Leprosy.jpg" alt="Leprosy" width="600" height="400">
-    </a>
-    <div class="desc" style="color: #d6111a;">Leprosy <br>1988</div>
-  </div>
-  
-  <div class="gallery">
-    <a target="_blank" href="https://www.youtube.com/watch?v=hE8tNBV4E2w&list=OLAK5uy_lvl_GfAhTRb1TshZEYcNNBz2jtvEtNqCE">
-      <img src="Spiritual_Healing.jpg" alt="Spiritual_Healing" width="600" height="400">
-    </a>
-    <div class="desc" style="color: #d6111a;">Spiritual Healing <br> 1990</div>
-  </div>
-  
-  <div class="gallery">
-    <a target="_blank" href="https://www.youtube.com/watch?v=yuPoJgnGdcI&list=OLAK5uy_nPwSxQ2O7IQsxvPq_CaYJDppOG-HuJz1I">
-      <img src="human.jpg" alt="Mountains" width="600" height="400">
-    </a>
-    <div class="desc" style="color: #d6111a;"  >Human <br> 1991</div>
-  </div>
-
-  <div class="gallery">
-    <a target="_blank" href="https://www.youtube.com/watch?v=CBctUOk_xxQ&list=OLAK5uy_lLqxx0yQzIpmYDaMgj2ynfLvWzp6SzGoM">
-      <img src="Individual_Thought_patterns.jpg" alt="Mountains" width="600" height="400">
-    </a>
-    <div class="desc" style="color: #d6111a;"  >Individual Thought Patterns 1993</div>
-  </div>
-
-  <div class="gallery">
-    <a target="_blank" href="https://www.youtube.com/watch?v=ZVtpax8gJGU&list=OLAK5uy_kH9u2K0oiMcXrIYMiiIPMBt279yXMk8b8">
-      <img src="symbolic.jpg" alt="Mountains" width="600" height="400">
-    </a>
-    <div class="desc" style="color: #d6111a;"  >Symbolic<br> 1995</div>
-  </div>
-
-  <div class="gallery">
-    <a target="_blank" href="https://www.youtube.com/watch?v=hN8XncMtwAA&list=OLAK5uy_kdqvRGC-bRNA_-QV7bHThLx5YNVCdReWY">
-      <img src="the_sound_of_perseverance.jpg" alt="Mountains" width="600" height="400">
-    </a>
-    <div class="desc" style="color: #d6111a;"  > The Sound of Perseverance 1998</div>
-  </div>
-    
-  <div class="footer">
-    <p>© 2025 Death.</p>
-  </div>
-<style>
-    /* Estilo do cabeçalho */
+  <style>
+    /* Estilo do header */
     .header {
       background-color: #000000;
       padding: 10px;
@@ -99,7 +36,7 @@
       text-align: center;
       padding: 10px 16px;
       text-decoration: none;
-      font-family: Garamond, serif; /* Define a fonte */
+      font-family: Garamond; 
     }
 
     /* Efeito ao passar o mouse */
@@ -112,45 +49,113 @@
     .center {
       text-align: center;
     }
-/* Backgound */
-body{
-background-color: black;
-}
+    
+    body{
+      background-color: black;
+    }
 
-* {box-sizing:border-box}
+    * {box-sizing:border-box}
 
-div.gallery {
-  margin: 5px;
-  border: 1px solid #d6111a;
-  float: left;
-  width: 180px;
-}
+    /*albuns*/
+    div.gallery {
+      margin: 5px;
+      border: 1px solid #d6111a;
+      float: left;
+      width: 180px;
+    }
 
-div.gallery:hover {
-  border: 1px solid #eeecec;
-}
+    /* hover borda */
+    div.gallery:hover {
+      border: 1px solid #eeecec;
+    }
 
-div.gallery img {
-  width: 100%;
-  height: auto;
-  
-}
+    /* imagem capa */
+    div.gallery img {
+      width: 100%;
+      height: auto;
+    }
 
-div.desc {
-  padding: 15px;
-  text-align: center;
-}
+    div.desc {
+      padding: 15px;
+      text-align: center;
+    }
 
-/* Estilo do rodapé */
-.footer {
-background-color: #000000;
-color: #d6111a;
-text-align: center;
- padding: 10px;
- 
-}
+    /* estilo do rodapé */
+    .footer {
+      background-color: #000000;
+      color: #d6111a;
+      text-align: center;
+      padding: 10px;
+    }
 </style>
 </head>
+
+  <!-- header -->
+  <div class="header">
+    <img src="Death.png" style="width: 110px;">
+
+    <!-- Barra de navegação dentro do cabeçalho -->
+    <div class="topnav">
+      <a href="Index.html" >HOME</a>
+      <a href="Sobre.html">SOBRE</a>
+      <a href="Albums.html">ALBUMS</a>
+    </div>
+  </div>
+
+  <!-- albuns -->
+  <div class="gallery">
+    <a target="_blank" href="https://www.youtube.com/watch?v=I-BqU3nkmto&list=OLAK5uy_nFu-fDDLNUibJxJpXXTmattVPfuGrJfJ0" >
+      <img src="ScreamBloodyGore.jpg" alt="ScreamBloodyGore" width="600" height="400">
+    </a>
+    <div class="desc" style="color: #d6111a;">Scream Bloody Gore 1987</div>
+  </div>
+  
+  <div class="gallery">
+    <a target="_blank" href="https://www.youtube.com/watch?v=uiSTpOBC9ac&list=OLAK5uy_nq7b_iWMbEz8Ga7kFVkcpMnjNGdlTYMXU">
+      <img src="Leprosy.jpg" alt="Leprosy" width="600" height="400">
+    </a>
+    <div class="desc" style="color: #d6111a;">Leprosy <br>1988</div>
+  </div>
+  
+  <div class="gallery">
+    <a target="_blank" href="https://www.youtube.com/watch?v=hE8tNBV4E2w&list=OLAK5uy_lvl_GfAhTRb1TshZEYcNNBz2jtvEtNqCE">
+      <img src="Spiritual_Healing.jpg" alt="Spiritual_Healing" width="600" height="400">
+    </a>
+    <div class="desc" style="color: #d6111a;">Spiritual Healing <br> 1990</div>
+  </div>
+  
+  <div class="gallery">
+    <a target="_blank" href="https://www.youtube.com/watch?v=yuPoJgnGdcI&list=OLAK5uy_nPwSxQ2O7IQsxvPq_CaYJDppOG-HuJz1I">
+      <img src="human.jpg" alt="Human" width="600" height="400">
+    </a>
+    <div class="desc" style="color: #d6111a;"  >Human <br> 1991</div>
+  </div>
+
+  <div class="gallery">
+    <a target="_blank" href="https://www.youtube.com/watch?v=CBctUOk_xxQ&list=OLAK5uy_lLqxx0yQzIpmYDaMgj2ynfLvWzp6SzGoM">
+      <img src="Individual_Thought_patterns.jpg" alt="Individual_Thought_patterns" width="600" height="400">
+    </a>
+    <div class="desc" style="color: #d6111a;"  >Individual Thought Patterns 1993</div>
+  </div>
+
+  <div class="gallery">
+    <a target="_blank" href="https://www.youtube.com/watch?v=ZVtpax8gJGU&list=OLAK5uy_kH9u2K0oiMcXrIYMiiIPMBt279yXMk8b8">
+      <img src="symbolic.jpg" alt="Symbolic" width="600" height="400">
+    </a>
+    <div class="desc" style="color: #d6111a;"  >Symbolic<br> 1995</div>
+  </div>
+
+  <div class="gallery">
+    <a target="_blank" href="https://www.youtube.com/watch?v=hN8XncMtwAA&list=OLAK5uy_kdqvRGC-bRNA_-QV7bHThLx5YNVCdReWY">
+      <img src="the_sound_of_perseverance.jpg" alt="the_sound_of_perseverance" width="600" height="400">
+    </a>
+    <div class="desc" style="color: #d6111a;"  > The Sound of Perseverance 1998</div>
+  </div>
+    
+  <!-- rodapé -->
+  <div class="footer">
+    <p>© 2025 Death.</p>
+  </div>
 
     </body>
 </html>

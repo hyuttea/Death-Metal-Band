@@ -5,19 +5,176 @@
     </head>
 
 <body>
+  <style>
+  
+    /* Estilo da header */
+    .header {
+      background-color: #000000;
+      padding: 10px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000; /* Garante que o cabeçalho fique sobre outros elementos */
+    }
+    
+    /* Barra de navegação */
+    .topnav {
+      overflow: hidden;
+      background-color: #000000;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      z-index: 1000;
+      position: sticky;
+      top: 0;
+      font-family: Garamond; 
+      font-weight: bold;
+    }
+    
+    /* Links da barra de navegação */
+    .topnav a {
+      display: block;
+      color: #d6111a;
+      text-align: center;
+      padding: 10px 16px;
+      text-decoration: none;
+      font-family: Garamond; 
+    }
+    
+    /* Efeito ao passar o mouse */
+    .topnav a:hover {
+      background-color: #b10c14;
+      color: #000000;
+    }
+    
+    /* Estilo para o vídeo */
+    .center {
+      text-align: center;
+    }
+    
+    body{
+      background-color: black;
+    }
+    
+    /* Slideshow container */
+    .slideshow-container {
+      max-width: 700px;
+      position: relative;
+      margin: auto;
+    }
+    
+    /* esconde as imagens */
+    .mySlides {
+      display: none;
+    }
+    
+    /* botoes setas do banner <  > */
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      margin-top: -22px;
+      padding: 16px;
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+    
+    /* posição do "next button" para a direita */
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+    
+    /* hover, opacidade de cor vermelha ao passar o mouse */
+    .prev:hover, .next:hover {
+      background-color: #d6111a;
+    }
+    
+    /* bolinhas */
+    .dot {
+      cursor: pointer;
+      height: 10px;
+      width: 10px;
+      margin: 0 2px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+    
+    /*hover das bolinhas*/
+    .active, .dot:hover {
+      background-color: #d6111a;
+    }
+    
+    /* Fading animação */
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+    
+    @keyframes fade {
+      from {opacity: .4}
+      to {opacity: 1}
+    }
+    .column {
+      float: left;
+    }
+    
+    /* coluna direita e esquerda */
+    .column.side {
+      width: 25%;
+      
+    }
+    
+    /* coluna do meio */
+    .column.middle {
+      width: 50%;
+      text-align: center;
+      font-family: 'Garamond';
+    }
+    
+    /* Clear floats after the columns */
+    .row::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    
+    /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+      .column.side, .column.middle {
+        width: 100%;
+      }
+    }
+    
+    /* estilo do rodapé */
+    .footer {
+      background-color: #000000;
+      color: #d6111a;
+      text-align: center;
+      padding: 10px;
+    }
+    </style>
+
     <div class="header">
-        <img src="Death.png" style="width: 110px;">
+      <img src="Death.png" style="width: 110px;">
 
-        <!-- Barra de navegação dentro do cabeçalho -->
-        <div class="topnav">
-          <a href="Index.html">HOME</a>
-          <a href="Sobre.html">SOBRE</a>
-          <a href="Albums.html">ALBUMS</a>
-        </div>
+      <!-- barra de navegação dentro do cabeçalho -->
+      <div class="topnav">
+        <a href="Index.html">HOME</a>
+        <a href="Sobre.html">SOBRE</a>
+        <a href="Albums.html">ALBUMS</a>
       </div>
+    </div>
 
-       <!-- Slideshow container -->
-<div class="slideshow-container">
+    <!-- slideshow container -->
+    <div class="slideshow-container">
 
     <!-- Full-width images with number and caption text -->
     <div class="mySlides fade">
@@ -38,59 +195,62 @@
       <div class="text">Caption Three</div>
     </div>
   
-    <!-- Next and previous buttons -->
+    <!-- botoes ir e voltar -->
     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
     <a class="next" onclick="plusSlides(1)">&#10095;</a>
   </div>
   <br>
   
-  <!-- The dots/circles -->
+  <!-- bolinhas -->
   <div style="text-align:center" >
     <span class="dot" onclick="currentSlide(1)"></span>
     <span class="dot" onclick="currentSlide(2)"></span>
     <span class="dot" onclick="currentSlide(3)"></span>
   </div>
 
+  <!-- coluna esquerda-->
   <div class="row" >
     <div class="column side" style="text-align: center;">
       <h2 style="color: #b10c14;">INFORMAÇÕES</h2>
-      <p  style="color: #ffffff;">País: Estados Unidos</p>
-      <p  style="color: #ffffff;">Origem: Orlando, Flórida</p>
-      <p  style="color: #ffffff;">Período em atividade:<br>1983–2001</p>
-      <p  style="color: #ffffff;">Gênero(s):<br> Death metal,<br>metal progressivo, <br>death metal melódico, <br>death metal técnico.</p>
-      <p  style="color: #ffffff;" >Gravadora(s):	<br>Nuclear Blast, Roadrunner,<br> Relativity, Combat.</p>
+      <p style="color: #ffffff;">País: Estados Unidos</p>
+      <p style="color: #ffffff;">Origem: Orlando, Flórida</p>
+      <p style="color: #ffffff;">Período em atividade:<br>1983–2001</p>
+      <p style="color: #ffffff;">Gênero(s):<br> Death metal,<br>metal progressivo, <br>death metal melódico, <br>death metal técnico.</p>
+      <p style="color: #ffffff;" >Gravadora(s):	<br>Nuclear Blast, Roadrunner,<br> Relativity, Combat.</p>
     </div>
     
+    <!-- coluna meio-->
     <div class="column middle">
-        <h2 style="color: #b10c14;">HISTÓRIA</h2>
-        <h4 style="color: #d6111a;">Formação (1983-1985)</h4>
-        <p  style="color: #ffffff;">Considerada uma das bandas mais influentes do death metal, a história do Death teve início quando o guitarrista e vocalista Chuck Schuldiner e o guitarrista Rick Rozz se juntaram ao baterista e vocalista Barney "Kam" Lee para formarem primeiramente o Mantas. Inspirados principalmente por bandas como Venom e Slayer, o trio começou a forjar as suas primeiras composições, enviando-as a várias "tape-traders" internacionais. Numa destas sessões foi produzida uma demo intitulada Death by Metal de 1984, composta por cinco canções, que, apesar do seu registro deveras bruto, alçou a banda como uma das mais promissoras da América dentro do death metal, cuja banda em evidência era o Possessed, proveniente de San Francisco.</p>
-        <p  style="color: #ffffff;">Embora tenham gozado de um efêmero reconhecimento, os integrantes do Mantas presumiram que não eram recebidos com o devido crédito, como revelou Chuck:
+      <h2 style="color: #b10c14;">HISTÓRIA</h2>
+      <h4 style="color: #d6111a;">Formação (1983-1985)</h4>
+      <p style="color: #ffffff;">Considerada uma das bandas mais influentes do death metal, a história do Death teve início quando o guitarrista e vocalista Chuck Schuldiner e o guitarrista Rick Rozz se juntaram ao baterista e vocalista Barney "Kam" Lee para formarem primeiramente o Mantas. Inspirados principalmente por bandas como Venom e Slayer, o trio começou a forjar as suas primeiras composições, enviando-as a várias "tape-traders" internacionais. Numa destas sessões foi produzida uma demo intitulada Death by Metal de 1984, composta por cinco canções, que, apesar do seu registro deveras bruto, alçou a banda como uma das mais promissoras da América dentro do death metal, cuja banda em evidência era o Possessed, proveniente de San Francisco.</p>
+      <p style="color: #ffffff;">Embora tenham gozado de um efêmero reconhecimento, os integrantes do Mantas presumiram que não eram recebidos com o devido crédito, como revelou Chuck:
 
-        <p style="color: #ffffff;">"Muitas pessoas nos subestimaram, nós recebemos um monte de m**** da cena de bandas locais; todas as bandas dos arredores (Orlando) acharam que nós eramos pura m****. Nós eramos barulhentos naquela época, mas estávamos colocando pra fora death metal bruto, era muito para a compreensão das pessoas." </p>
-        <p style="color: #ffffff;">Nesse ínterim, o Mantas acabou por se dissolver em 1984.</p>
-        <p style="color: #ffffff;">Posteriormente, Chuck Schuldiner intentando perfazer canções mais pesadas e rápidas, anunciou os seus planos para formar uma banda denominada Death. Reconciliado com Rozz e Lee, Chuck iniciou a elaboração de novas demos, dentre as quais se originária a legendária "Reign of Terror", a qual, definitivamente, impingiu o Death como referência no death metal mundial, denotando-os, assim, o caráter do seu real potencial como banda. Alcançava o Death, dessa forma, o "seu lugar no mapa". Após várias breves aparições ao vivo (comumente em bares) a banda concentrou-se em erigir seu caminho ao primeiro petardo.</p>
+      <p style="color: #ffffff;">"Muitas pessoas nos subestimaram, nós recebemos um monte de m**** da cena de bandas locais; todas as bandas dos arredores (Orlando) acharam que nós eramos pura m****. Nós eramos barulhentos naquela época, mas estávamos colocando pra fora death metal bruto, era muito para a compreensão das pessoas." </p>
+      <p style="color: #ffffff;">Nesse ínterim, o Mantas acabou por se dissolver em 1984.</p>
+      <p style="color: #ffffff;">Posteriormente, Chuck Schuldiner intentando perfazer canções mais pesadas e rápidas, anunciou os seus planos para formar uma banda denominada Death. Reconciliado com Rozz e Lee, Chuck iniciou a elaboração de novas demos, dentre as quais se originária a legendária "Reign of Terror", a qual, definitivamente, impingiu o Death como referência no death metal mundial, denotando-os, assim, o caráter do seu real potencial como banda. Alcançava o Death, dessa forma, o "seu lugar no mapa". Após várias breves aparições ao vivo (comumente em bares) a banda concentrou-se em erigir seu caminho ao primeiro petardo.</p>
        
-        <h4 style="color: #d6111a;">Primeiros álbuns (1986-1990)</h4>
-        <p style="color: #ffffff;">Lançado em julho de 1987, Scream Bloody Gore, teve grande projeção entre a crítica especializada. Esse álbum é considerado um marco dentro do estilo e influenciou grande parte das bandas que aderiram ao gênero anos mais tarde. Músicas como "Zombie Ritual" e "Baptized In Blood" são até hoje muito reverenciadas pelos fãs. No ano seguinte Terry Butler (baixo) e Bill Andrews (bateria) entram no grupo e lançam Leprosy, outro álbum considerado essencial para fãs do gênero. A evolução de Schuldiner como músico e compositor era notável, o som do Death ficava cada vez mais técnico e veloz, assim como a produção também havia melhorado bastante, se comparado ao álbum anterior. Destacam-se faixas como "Pull The Plug", Forgotten Past" e a faixa título. Bastante conhecidos no meio Underground, o Death inicia a turnê de divulgação, passando pela Europa, onde tiveram alguns problemas referentes a organização, e na América do Norte (No México, a banda contou com o reforço do guitarrista Paul Masvidal), consagrando-os como uma das melhores bandas de Metal ao vivo da época.</p>
-        <p style="color: #ffffff;">Logo após, Chuck contratou o virtuoso guitarrista James Murphy, que junto a banda, gravaria o álbum Spiritual Healing, lançado em fevereiro de 1990, produzido por Scott Burns. Chuck Schuldiner cada vez mais se mostrava um grande compositor, e a técnica do Death crescia gradualmente a cada lançamento. Chuck também mudou a temática das letras, dessa vez apostando mais em críticas sociais. Em 1990, às vésperas de uma turnê europeia, Schuldiner decidiu não viajar, alegando que no último minuto, ele sentiu que a turnê não foi devidamente organizada. Andrews e Butler continuaram com a turnê pela Europa como "Death" para cumprir as obrigações contratuais da banda, e recrutaram os roadies Walter Trachsler (guitarra) e Louie Carrisalez (vocal) para substituir Schuldiner, para grande espanto deste. Schuldiner tomou medidas legais e Butler e Andrews foram demitidos da banda. Desde então, Chuck havia decidido que não trabalharia mais com músicos fixos no Death, apenas músicos contratados.</p>
+      <h4 style="color: #d6111a;">Primeiros álbuns (1986-1990)</h4>
+      <p style="color: #ffffff;">Lançado em julho de 1987, Scream Bloody Gore, teve grande projeção entre a crítica especializada. Esse álbum é considerado um marco dentro do estilo e influenciou grande parte das bandas que aderiram ao gênero anos mais tarde. Músicas como "Zombie Ritual" e "Baptized In Blood" são até hoje muito reverenciadas pelos fãs. No ano seguinte Terry Butler (baixo) e Bill Andrews (bateria) entram no grupo e lançam Leprosy, outro álbum considerado essencial para fãs do gênero. A evolução de Schuldiner como músico e compositor era notável, o som do Death ficava cada vez mais técnico e veloz, assim como a produção também havia melhorado bastante, se comparado ao álbum anterior. Destacam-se faixas como "Pull The Plug", Forgotten Past" e a faixa título. Bastante conhecidos no meio Underground, o Death inicia a turnê de divulgação, passando pela Europa, onde tiveram alguns problemas referentes a organização, e na América do Norte (No México, a banda contou com o reforço do guitarrista Paul Masvidal), consagrando-os como uma das melhores bandas de Metal ao vivo da época.</p>
+      <p style="color: #ffffff;">Logo após, Chuck contratou o virtuoso guitarrista James Murphy, que junto a banda, gravaria o álbum Spiritual Healing, lançado em fevereiro de 1990, produzido por Scott Burns. Chuck Schuldiner cada vez mais se mostrava um grande compositor, e a técnica do Death crescia gradualmente a cada lançamento. Chuck também mudou a temática das letras, dessa vez apostando mais em críticas sociais. Em 1990, às vésperas de uma turnê europeia, Schuldiner decidiu não viajar, alegando que no último minuto, ele sentiu que a turnê não foi devidamente organizada. Andrews e Butler continuaram com a turnê pela Europa como "Death" para cumprir as obrigações contratuais da banda, e recrutaram os roadies Walter Trachsler (guitarra) e Louie Carrisalez (vocal) para substituir Schuldiner, para grande espanto deste. Schuldiner tomou medidas legais e Butler e Andrews foram demitidos da banda. Desde então, Chuck havia decidido que não trabalharia mais com músicos fixos no Death, apenas músicos contratados.</p>
       
-        <h4 style="color: #d6111a;">Início da fase técnica (1991-1996)</h4>
-        <p style="color: #ffffff;">Logo após, Chuck contatou o exímio baixista Steve DiGiorgio, do Sadus, e recrutou o Sean Reinert (bateria) e Paul Masvidal (guitarra), do Cynic, para gravarem o álbum Human. Considerado um dos primeiros álbuns de death metal técnico, Human mostrou o Death em um nível técnico nunca visto antes, com melodias ainda mais complexas e intrincadas, sendo ainda mais progressivo que os álbuns anteriores e com uma produção muito mais cristalina. Human foi o álbum melhor sucedido comercialmente do Death até então, e dele saiu o primeiro e histórico videoclipe da banda, "Lack Of Comprehension", dirigido por David Bellino. O clipe teve boa veiculação pela MTV e outros meios, uma das raras vezes em que grandes meios de comunicação divulgariam uma banda de metal extremo. Devido a conflitos com a agenda do Sadus, DiGiorgio não pode sair em turnê com o Death, dando lugar ao baixista Skott Carino, que além de participar da turnê de divulgação do álbum entre 1991 e 1992, também participou do clipe da "Lack Of Comprehension".</p>
-        <p style="color: #ffffff;">Em 1993, Masvidal e Reinert deixaram a banda e retornaram ao Cynic. Para substituí-los, Schuldiner chamou o habilidoso baterista Gene Hoglan, que havia acabado de sair do Dark Angel, e o guitarrista Andy LaRocque, que tocara com King Diamond. Com esse Line-up, foi lançado o álbum Individual Thought Patterns. Considerado pelos fãs de longa data o melhor álbum da banda, o Death havia chegado ao seu auge, musicalmente e tecnicamente. Ainda mais progressivo e poderoso, e com uma produção digna de bandas de Metal Mainstream como Metallica e Iron Maiden, o álbum contava com grandes composições como "Overactive Imagination", "Trapped In A Corner", e a música mais conhecida do Death, que deu origem segundo videoclipe da banda, "The Philosopher". Individual Thought Patterns levara o Death ao seu auge comercial e os tornaram muito populares. O videoclipe de "The Philosopher" até apareceu em um episódio de Beavis & Butt-head em 1994. No entanto, o Death sairia da Roadrunner Records, distribuidora dos álbuns na Europa, após um contrato que durou oito anos. Após outra longa turnê, muito bem sucedida, com o guitarrista Ralph Santolla substituindo LaRocque, que teve compromissos com King Diamond, em 1995, era hora de gravar um novo álbum. Chuck contratara os músicos Kelly Conlon e Bobby Koelble, para substituir DiGiorgio e LaRocque. Gene Hoglan permaneceria com a banda. Então, em 1995, é lançado Symbolic. Diversos fãs mantem-se em dúvidas e dividem opiniões até hoje, para descobrir qual álbum é melhor, se este ou o anterior. Contando com músicas como "Crystal Mountain", "Perennial Quest", "Zero Tolerance" e a faixa-título, o álbum rapidamente tornou-se um clássico do estilo. Para a turnê, Chuck contratou o baixista Brian Benson, mas esse deixou a banda antes mesmo desta começar, devido a conflitos com Schuldiner. Logo após, Chuck iniciaria o seu projeto de Metal Progressivo, Control Denied, e o Death iniciaria um hiato. No entanto, Schuldiner conseguiu um contrato com a Nuclear Blast para ambas bandas.</p>
+      <h4 style="color: #d6111a;">Início da fase técnica (1991-1996)</h4>
+      <p style="color: #ffffff;">Logo após, Chuck contatou o exímio baixista Steve DiGiorgio, do Sadus, e recrutou o Sean Reinert (bateria) e Paul Masvidal (guitarra), do Cynic, para gravarem o álbum Human. Considerado um dos primeiros álbuns de death metal técnico, Human mostrou o Death em um nível técnico nunca visto antes, com melodias ainda mais complexas e intrincadas, sendo ainda mais progressivo que os álbuns anteriores e com uma produção muito mais cristalina. Human foi o álbum melhor sucedido comercialmente do Death até então, e dele saiu o primeiro e histórico videoclipe da banda, "Lack Of Comprehension", dirigido por David Bellino. O clipe teve boa veiculação pela MTV e outros meios, uma das raras vezes em que grandes meios de comunicação divulgariam uma banda de metal extremo. Devido a conflitos com a agenda do Sadus, DiGiorgio não pode sair em turnê com o Death, dando lugar ao baixista Skott Carino, que além de participar da turnê de divulgação do álbum entre 1991 e 1992, também participou do clipe da "Lack Of Comprehension".</p>
+      <p style="color: #ffffff;">Em 1993, Masvidal e Reinert deixaram a banda e retornaram ao Cynic. Para substituí-los, Schuldiner chamou o habilidoso baterista Gene Hoglan, que havia acabado de sair do Dark Angel, e o guitarrista Andy LaRocque, que tocara com King Diamond. Com esse Line-up, foi lançado o álbum Individual Thought Patterns. Considerado pelos fãs de longa data o melhor álbum da banda, o Death havia chegado ao seu auge, musicalmente e tecnicamente. Ainda mais progressivo e poderoso, e com uma produção digna de bandas de Metal Mainstream como Metallica e Iron Maiden, o álbum contava com grandes composições como "Overactive Imagination", "Trapped In A Corner", e a música mais conhecida do Death, que deu origem segundo videoclipe da banda, "The Philosopher". Individual Thought Patterns levara o Death ao seu auge comercial e os tornaram muito populares. O videoclipe de "The Philosopher" até apareceu em um episódio de Beavis & Butt-head em 1994. No entanto, o Death sairia da Roadrunner Records, distribuidora dos álbuns na Europa, após um contrato que durou oito anos. Após outra longa turnê, muito bem sucedida, com o guitarrista Ralph Santolla substituindo LaRocque, que teve compromissos com King Diamond, em 1995, era hora de gravar um novo álbum. Chuck contratara os músicos Kelly Conlon e Bobby Koelble, para substituir DiGiorgio e LaRocque. Gene Hoglan permaneceria com a banda. Então, em 1995, é lançado Symbolic. Diversos fãs mantem-se em dúvidas e dividem opiniões até hoje, para descobrir qual álbum é melhor, se este ou o anterior. Contando com músicas como "Crystal Mountain", "Perennial Quest", "Zero Tolerance" e a faixa-título, o álbum rapidamente tornou-se um clássico do estilo. Para a turnê, Chuck contratou o baixista Brian Benson, mas esse deixou a banda antes mesmo desta começar, devido a conflitos com Schuldiner. Logo após, Chuck iniciaria o seu projeto de Metal Progressivo, Control Denied, e o Death iniciaria um hiato. No entanto, Schuldiner conseguiu um contrato com a Nuclear Blast para ambas bandas.</p>
       
-        <h4 style="color: #d6111a;">Último disco e fim da banda (1997-2001)</h4>
-        <p style="color: #ffffff;">Em 1997, no entanto, o Death retorna mais uma vez, para lançar o último álbum da carreira, The Sound Of Perseverance, contando com Richard Christy (bateria), Shannon Hamm (guitarra) e Scott Clendenin (contra-baixo). Lançado pela Nuclear Blast em 1998, The Sound Of Perseverance mostrava um Death ainda mais técnico e progressivo (alguns materiais foram re-aproveitados do Control Denied), e com Chuck cantando de uma forma diferente - ao invés dos tradicionais guturais, Chuck optaria por um vocal mais rasgado e agudo. Destacam-se composições como "Scavenger of Human Sorrow", "Spirit Crusher", "A Moment of Clarity", e o cover de "Painkiller", do Judas Priest. A turnê de divulgação seguiu com o mesmo Line-up que gravou o álbum.</p>
-        <p style="color: #ffffff;">Depois do álbum e duas turnês de suporte, Schuldiner colocou o Death de lado para se dedicar ao Control Denied com Christy e Hamm. Clendenin foi trocado por Steve DiGiorgio, e o vocalista Tim Aymar. Embora o line-up e estilo das músicas do Control Denied fossem em grande parte semelhantes ao do Death, Schuldiner criou o Control Denied, porque ele estava descontente com os vocais menos agressivos para o Death. No entanto, em vez de trair o que a banda Death significava e como soava para os fãs, ele optou por criar uma nova banda: "Para mim, é apenas uma questão de evolução, fazendo do jeito certo, ou não", afirmou. Quando Schuldiner terminou de gravar o álbum de estréia do Control Denied, ele foi diagnosticado com câncer no cérebro, forçando a banda a cancelar os planos para uma turnê pelos EUA e Canadá. Após um pesado tratamento, a condição de Schuldiner melhorou, mas o tumor o deixou em um estado muito vulnerável e enfraquecido. Logo após, contraiu pneumonia e foi internado. Em 13 de dezembro de 2001, Chuck recebeu alta e voltou para casa, onde, uma hora depois, veio a falecer, dando fim de vez as atividades da banda.</p>
+      <h4 style="color: #d6111a;">Último disco e fim da banda (1997-2001)</h4>
+      <p style="color: #ffffff;">Em 1997, no entanto, o Death retorna mais uma vez, para lançar o último álbum da carreira, The Sound Of Perseverance, contando com Richard Christy (bateria), Shannon Hamm (guitarra) e Scott Clendenin (contra-baixo). Lançado pela Nuclear Blast em 1998, The Sound Of Perseverance mostrava um Death ainda mais técnico e progressivo (alguns materiais foram re-aproveitados do Control Denied), e com Chuck cantando de uma forma diferente - ao invés dos tradicionais guturais, Chuck optaria por um vocal mais rasgado e agudo. Destacam-se composições como "Scavenger of Human Sorrow", "Spirit Crusher", "A Moment of Clarity", e o cover de "Painkiller", do Judas Priest. A turnê de divulgação seguiu com o mesmo Line-up que gravou o álbum.</p>
+      <p style="color: #ffffff;">Depois do álbum e duas turnês de suporte, Schuldiner colocou o Death de lado para se dedicar ao Control Denied com Christy e Hamm. Clendenin foi trocado por Steve DiGiorgio, e o vocalista Tim Aymar. Embora o line-up e estilo das músicas do Control Denied fossem em grande parte semelhantes ao do Death, Schuldiner criou o Control Denied, porque ele estava descontente com os vocais menos agressivos para o Death. No entanto, em vez de trair o que a banda Death significava e como soava para os fãs, ele optou por criar uma nova banda: "Para mim, é apenas uma questão de evolução, fazendo do jeito certo, ou não", afirmou. Quando Schuldiner terminou de gravar o álbum de estréia do Control Denied, ele foi diagnosticado com câncer no cérebro, forçando a banda a cancelar os planos para uma turnê pelos EUA e Canadá. Após um pesado tratamento, a condição de Schuldiner melhorou, mas o tumor o deixou em um estado muito vulnerável e enfraquecido. Logo após, contraiu pneumonia e foi internado. Em 13 de dezembro de 2001, Chuck recebeu alta e voltou para casa, onde, uma hora depois, veio a falecer, dando fim de vez as atividades da banda.</p>
       </div>
     
+      <!-- coluna direita-->
     <div class="column side" style="text-align: center;">
       <h2 style="color: #b10c14;">EX-INTEGRANTES</h2>
       <h4 style="color: #d6111a;">Última formação</h4>
-      <p  style="color: #ffffff;">Chuck Schuldiner − vocal, guitarra <br>(1983-2001)</p>
-      <p  style="color: #ffffff;">Shannon Hamm − guitarra <br>(1996-2001)</p>
-      <p  style="color: #ffffff;">Scott Clendenin − baixo <br>(1996-1997, 1998-2001)</p>
-      <p  style="color: #ffffff;">Richard Christy − bateria <br>(1996-2001)</p>
+      <p style="color: #ffffff;">Chuck Schuldiner − vocal, guitarra <br>(1983-2001)</p>
+      <p style="color: #ffffff;">Shannon Hamm − guitarra <br>(1996-2001)</p>
+      <p style="color: #ffffff;">Scott Clendenin − baixo <br>(1996-1997, 1998-2001)</p>
+      <p style="color: #ffffff;">Richard Christy − bateria <br>(1996-2001)</p>
       <h4 style="color: #d6111a;">Guitarristas</h4>
       <p style="color: #ffffff;">Rick Rozz (Frederick DeLillo) <br>(1983-85, 1987-89)</p>
       <p style="color: #ffffff;">Andy LaRocque (Anders Allhage) <br>(1993)</p>
@@ -120,167 +280,13 @@
     </div>
   </div>
 
+    <!-- rodapé -->
   <div class="footer">
     <p>© 2025 Death.</p>
   </div>
-<style>
-  
-/* Estilo do cabeçalho */
-    .header {
-      background-color: #000000;
-      padding: 10px;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000; /* Garante que o cabeçalho fique sobre outros elementos */
-    }
 
-    /* Barra de navegação */
-    .topnav {
-      overflow: hidden;
-      background-color: #000000;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      z-index: 1000;
-      position: sticky;
-      top: 0;
-      font-family: Garamond; 
-      font-weight: bold;
-    }
-
-    /* Links da barra de navegação */
-    .topnav a {
-      display: block;
-      color: #d6111a;
-      text-align: center;
-      padding: 10px 16px;
-      text-decoration: none;
-      font-family: Garamond, serif; /* Define a fonte */
-    }
-
-    /* Efeito ao passar o mouse */
-    .topnav a:hover {
-      background-color: #b10c14;
-      color: #000000;
-    }
-
-    /* Estilo para o vídeo */
-    .center {
-      text-align: center;
-    }
-
-body{
-background-color: black;
-}
-
-/* Slideshow container */
-.slideshow-container {
-  max-width: 700px;
-  position: relative;
-  margin: auto;
-}
-
-/* Hide the images by default */
-.mySlides {
-  display: none;
-}
-
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: #ffffff;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: #d6111a;
-}
-
-
-/* The dots/bullets/indicators */
-.dot {
-  cursor: pointer;
-  height: 10px;
-  width: 10px;
-  margin: 0 2px;
-  background-color: #ffffff;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active, .dot:hover {
-  background-color: #d6111a;
-}
-
-/* Fading animation */
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
-.column {
-  float: left;
-}
-
-/* Left and right column */
-.column.side {
-  width: 25%;
-  
-}
-
-/* Middle column */
-.column.middle {
-  width: 50%;
-  text-align: center;
-  font-family: 'Garamond';
-}
-
-/* Clear floats after the columns */
-.row::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column.side, .column.middle {
-    width: 100%;
-  }
-}
-
-/* Estilo do rodapé */
-.footer {
-      background-color: #000000;
-      color: #d6111a;
-      text-align: center;
-      padding: 10px;
-    }
-        </style>
-        <script>
-            let slideIndex = 1;
+  <script> //js
+  let slideIndex = 1;
   showSlides(slideIndex);
   
   // Next/previous controls
@@ -308,7 +314,6 @@ background-color: black;
     slides[slideIndex-1].style.display = "block";
     dots[slideIndex-1].className += " active";
   }
-  
-          </script>
+      </script>
     </body>
 </html>
